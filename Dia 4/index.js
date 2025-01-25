@@ -1,14 +1,13 @@
-// Declarando variaveis 
-const temFome = prompt("Você está com fome? (Sim/Não)")
-const temDinheiro = prompt("Você tem dinheiro? (Sim/Não)")
-const  restauranteAberto = prompt("O restaurante está aberto? (Sim/Não)")
+let temFome = prompt("Está com fome? (Sim/Não)")
+let temdinheiro = prompt("Tem dinheiro? (Sim/Não)")
+let restauranteAberto = prompt("O Restaurante está aberto? (Sim/Não)")
 
-//If, else.
-
-if (temFome === "não" || temDinheiro == "não") {
-    console.log("Hoje a janta será em casa");
-} else if (temDinheiro === "Sim" && restauranteAberto === "Sim") {
-    console.log("Hoje a janta sera no seu restaurante preferido!");
-} else {
-    console.log("Peça um delivery!");
+if ( temFome === "Não" || temdinheiro === "Não") {
+    console.log("Hoje a janta será em casa!")
+}
+if (temFome === "Sim" && temdinheiro === "Sim" && restauranteAberto === "Não") {
+    console.log("Peça um delivery!")
+}
+if( temFome === "Sim" && temdinheiro === "Sim" && restauranteAberto === "Sim") {
+    console.log("Hoje o jantar será no seu restaurante preferido!")
 }
