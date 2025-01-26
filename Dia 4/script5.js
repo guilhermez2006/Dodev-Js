@@ -1,28 +1,42 @@
-let idade
-let inscricao = false
-let taxaDeInscricao = false
-let passeEspecial = false
+// let passaporteValido = false
+// let vistoValido = false
 
-idade = parseInt(prompt("Qual a sua idade?"))
-inscricao = prompt("Você enviou sua inscrição? (Sim/Não)")
-taxaDeInscricao = prompt("Você pagou a taxa de inscrição? (Sim/Não)")
-passeEspecial = prompt("Você possui um passe especial? (Sim/Não)")
+// passaporteValido = prompt("Você tem um passaporte válido? (Sim/Não)")
+// vistoValido = prompt("Você tem um visto valido? (Sim/Não)")
 
-if (idade < 18) {
-    console.log("A incrição não foi aceita!")
-}
-else if (taxaDeInscricao !== "Sim") {
-    console.log("Taxa de incrição não paga!")
-}
-else if (passeEspecial !== "Sim" && taxaDeInscricao === "Sim" && idade >= 18) {
-    taxaDeInscricao = true
-    console.log("Inscrição normal recebida!")
-}
+// if (passaporteValido === ("Sim") && vistoValido === ("Sim")) {
+//     passaporteValido = true
+//     vistoValido = true
+//     console.log("Aprovado para viajar")
+// }
+// else if (passaporteValido === ("Sim") && vistoValido === ("Não")){
+//     passaporteValido = true
+//     console.log("Visto necessário para viajar")
+// }
+// else if (passaporteValido === ("Não") && vistoValido === ("Sim")) {
+//     vistoValido = true
+//     console.log("Passaporte necessário para viajar")
+// }
+// else if (passaporteValido === ("Não") && vistoValido === ("Não")) {
+//     console.log("Você não tem um passaporte, e não tem um visto valido!")
+// }
+// else {
+//     console.log("Erro no sistema! Digite novamente.")
+// }
 
-else if (passeEspecial === "Sim" && idade >= 18) {
-    passeEspecial = true
-    console.log("Inscrição especial recebida!")
-}
-else {
-    console.log("Erro no sistema! Digite novamente.")
+// Não precisava de valores booleanos, aqui é uma versão melhorada//
+
+let passaporteValido = prompt("Você tem um passaporte válido? (Sim/Não)");
+let vistoValido = prompt("Você tem um visto válido? (Sim/Não)");
+
+if (passaporteValido === "Sim" && vistoValido === "Sim") {
+    console.log("Aprovado para viajar");
+} else if (passaporteValido === "Sim" && vistoValido === "Não") {
+    console.log("Visto necessário para viajar");
+} else if (passaporteValido === "Não" && vistoValido === "Sim") {
+    console.log("Passaporte necessário para viajar");
+} else if (passaporteValido === "Não" && vistoValido === "Não") {
+    console.log("Você não tem um passaporte e não tem um visto válido!");
+} else {
+    console.log("Erro no sistema! Digite novamente.");
 }
