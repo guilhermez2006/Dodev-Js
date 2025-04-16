@@ -1,0 +1,48 @@
+body {
+    background-color: cornflowerblue;
+    font-family: Arial;
+}
+
+header {
+    text-align: center;
+    font-size: 23px;
+    background-image: linear-gradient(to right, rgb(44, 112, 238), transparent);
+}
+button{
+    background-color: aliceblue;
+    border: 1px solid black;
+}
+button:hover{
+    background-color: rgb(75, 134, 243);
+}
+section{
+    background-color: beige;
+    width: 300px;
+    height: 250px;
+    border-radius: 3px;
+    margin: auto;
+    margin-top: 300px;
+    padding: 5px;
+}
+
+label{
+    text-align: left;
+    font-size: 18px;
+
+}
+input{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+button{
+    margin-top: 20px;
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    padding: 4px 10px;
+    border-radius: 2px;
+}
+
+#resultado{
+    margin-top: 10px;
+}
