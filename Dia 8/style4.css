@@ -19,10 +19,11 @@ button:hover {
 section {
     margin: 0 auto;
     margin-top: 200px;
-    background-color: bisque;
+    background-color: rgb(206, 120, 120);
     width: 450px;
     height: 400px;
     border-radius: 4px;
+    box-shadow: 0px 0px 5px rgb(22, 22, 22);
 }
 
 label {
