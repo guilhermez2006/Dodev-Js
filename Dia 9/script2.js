@@ -1,22 +1,33 @@
-let peso = parseFloat(prompt("Digite seu peso (kg):"));
-let altura = parseFloat(prompt("Digite sua altura (m):"));
-let imc = peso / (altura * altura);
-let faixa = "";
+//DESCOBRINDO IMC
+let imc = peso / (altura * altura)
 
 if (imc < 18.5) {
-    faixa = "Magreza";
-} else if (imc >= 18.5 && imc < 24.9) {
-    faixa = "Normal";
-} else if (imc >= 24.9 && imc < 30) {
-    faixa = "Sobrepeso";
+    console.log("Magreza")
+} else if (imc >= 18.5 && imc <= 24.9) {
+    console.log("Normal")
+} else if (imc >= 25 && imc <= 29) {
+    console.log("Sobrepeso")
 } else {
-    faixa = "Obesidade";
+    console.log("Obesidade")
 }
 
-alert("IMC: " + imc.toFixed(2) + " - Faixa: " + faixa);
+//DESCOBRINDO O ANO DE NASCIMENTO
+let anoAtual = 2023
+let anoNasc = anoAtual - idade
+console.log("Você nasceu no ano de " + anoNasc)
 
-let idade = parseInt(prompt("Digite sua idade:"));
-let anoAtual = 2023;
-let anoNascimento = anoAtual - idade;
+//EXIBINDO ANOS E IDADES
+let anosVivido = anoAtual - anoNasc
+let idadeAtual = idade
 
-alert("Ano de nascimento estimado: " + anoNascimento);
+if (anosVivido == anoNasc && anosVivido == anoAtual) {
+    console.log(anosVivido + " anos de idade")
+    console.log(idadeAtual + " anos de idade")
+}
+idadeAtual
+
+//LOOP DO/WHILE
+do {
+    //INSERIR LÓGICA ANTERIOR
+    let continuar = prompt("Deseja inserir os dados novamente? (s/n)")
+} while (continuar == "s")
