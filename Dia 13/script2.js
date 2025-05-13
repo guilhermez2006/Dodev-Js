@@ -15,5 +15,5 @@ class Carro {
     }
 }
 
-const carro1 = new Carro("Ferrari", "1.000 cv", "400Km/H", 4)
+const carro1 = new Carro("Ferrari", "1.000 cv", 400, 4)
 carro1.ExibirInformacoes()
