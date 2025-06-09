@@ -1,99 +1,80 @@
-//CRIANDO CLASSE HOTEL
+// CLASSE HOTEL
 class Hotel {
-    Id
-    Nome
-    Categoria
-    Endereco
-    Telefone
-
-    constructor(Id, nome, categoria, endereco, telefone) {
-        this.Id = Id
-        this.Nome = nome
-        this.Categoria = categoria
-        this.Endereco = endereco
-        this.Telefone = telefone
+    constructor(id, nome, categoria, endereco, telefone) {
+        this.id = id;
+        this.nome = nome;
+        this.categoria = categoria;
+        this.endereco = endereco;
+        this.telefone = telefone;
     }
 }
 
-//CRIANDO CLASSE RESERVA
+// CLASSE RESERVA
 class Reserva {
-    Id
-    IdHotel
-    Responsavel
-    DiaEntrada
-    DiaSaida
-
-    constructor(Id, IdHotel, responsavel, diaEntrada, diaSaida) {
-        this.Id = Id
-        this.IdHotel = IdHotel
-        this.Responsavel = responsavel
-        this.DiaEntrada = diaEntrada
-        this.DiaSaida = diaSaida
+    constructor(id, hotelId, responsavel, entrada, saida) {
+        this.id = id;
+        this.hotelId = hotelId;
+        this.responsavel = responsavel;
+        this.entrada = entrada;
+        this.saida = saida;
     }
 }
-// ARRAYS PARA ARMAZENAR OS DADOS
-let hoteis = [];
-let reservas = [];
-let idHotel = 0;
-let idReserva = 0;
+
+// LISTAS E CONTADORES
+const hoteis = [];
+const reservas = [];
+let proximoIdHotel = 1;
+let proximoIdReserva = 1;
 
 // FUNÇÃO PARA CADASTRAR HOTEL
 function cadastrarHotel() {
-    let nome = prompt("Digite o nome do hotel");
-    let categoria = parseInt(prompt("Digite a categoria do hotel"));
-    let endereco = prompt("Digite o endereço do hotel");
-    let telefone = prompt("Digite o telefone do hotel");
+    const nome = prompt("Nome do hotel:");
+    const categoria = parseInt(prompt("Categoria do hotel (ex: 3):"));
+    const endereco = prompt("Endereço:");
+    const telefone = prompt("Telefone:");
 
-    let hotel = {
-        id: ++idHotel,
-        nome: nome,
-        categoria: categoria,
-        endereco: endereco,
-        telefone: telefone
-    };
+    const hotel = new Hotel(proximoIdHotel++, nome, categoria, endereco, telefone);
     hoteis.push(hotel);
+
     alert("Hotel cadastrado com sucesso!");
 }
 
 // FUNÇÃO PARA CADASTRAR RESERVA
 function cadastrarReserva() {
-    let idHotelReserva;
-    let existe = false;
+    let hotelId;
+    let hotelExiste = false;
 
     do {
-        idHotelReserva = parseInt(prompt("Digite o ID do hotel"));
+        hotelId = parseInt(prompt("ID do hotel:"));
+        hotelExiste = false;
+
         for (let i = 0; i < hoteis.length; i++) {
-            if (hoteis[i].id === idHotelReserva) {
-                existe = true;
+            if (hoteis[i].id === hotelId) {
+                hotelExiste = true;
                 break;
             }
         }
-        if (!existe) {
-            console.log("ID do total não cadastrado.");
+
+        if (!hotelExiste) {
+            alert("Hotel não encontrado. Tente novamente.");
         }
-    } while (!existe);
 
-    let nome = prompt("Digite o nome do responsável");
-    let dataEntrada = prompt("Digite a data de entrada");
-    let dataSaida;
-    let dataValida = false;
+    } while (!hotelExiste);
 
+    const responsavel = prompt("Nome do responsável:");
+    const entrada = prompt("Data de entrada (ex: 2025-06-10):");
+
+    let saida;
     do {
-        dataSaida = prompt("Digite a data de saída");
-        if (dataSaida <= dataEntrada) {
-            console.log("A data de saída deve ser maior que a data de entrada.");
-        } else {
-            dataValida = true;
-        }
-    } while (!dataValida);
+        saida = prompt("Data de saída (ex: 2025-06-12):");
 
-    let reserva = {
-        id: ++idReserva,
-        hotelId: idHotelReserva,
-        nomeResponsavel: nome,
-        dataEntrada: dataEntrada,
-        dataSaida: dataSaida
-    };
+        if (saida <= entrada) {
+            alert("A data de saída deve ser maior que a de entrada.");
+        }
+    } while (saida <= entrada);
+
+    const reserva = new Reserva(proximoIdReserva++, hotelId, responsavel, entrada, saida);
     reservas.push(reserva);
+
     alert("Reserva cadastrada com sucesso!");
 }
