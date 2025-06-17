@@ -51,3 +51,14 @@ valoresNegativos.forEach(function (valor) {
     }
 })
 
+// 10
+const listaNumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let somaPares = 0;
+
+listaNumeros.forEach(function (num) {
+    if (num % 2 === 0) {
+        somaPares += num;
+    }
+});
+
+console.log("Soma dos números pares:", somaPares);
