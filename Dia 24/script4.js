@@ -62,3 +62,9 @@ listaNumeros.forEach(function (num) {
 });
 
 console.log("Soma dos números pares:", somaPares);
+
+// 11
+const numeros = [11, 7];
+const divisaoInteira = Math.floor(numeros[0] / numeros[1]);
+
+console.log("Resultado da divisão inteira:", divisaoInteira);
