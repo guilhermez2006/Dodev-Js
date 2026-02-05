@@ -66,7 +66,7 @@ function listarAlunos() {
     return;
   }
 
-  alert(nomesDosAlunos.join("\n"));
+  alert("- " + nomesDosAlunos.join("\n- "));
 }
 
 // EXCLUIR
@@ -76,13 +76,14 @@ function excluirAluno() {
     return;
   }
 
-  let nome = prompt(
-    "Digite o nome do aluno para excluir:\n\n" +
-    nomesDosAlunos.join("\n")
-  );
+ let nome = prompt( 
+  "Digite o nome do aluno para excluir:\n- " +
+  nomesDosAlunos.join("\n- ")
+);
+
 
   if (nome === null) {
-    alert("Finalizando exclusão");
+    alert("Nenhum aluno excluído");
     return;
   }
 
